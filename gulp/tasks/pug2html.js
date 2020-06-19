@@ -2,6 +2,7 @@ const gulp = require('gulp'),
 	pug = require('gulp-pug'),
 	pugLinter = require('gulp-pug-linter'),
 	htmlValidator = require('gulp-w3c-html-validator'),
+	bemValidator = require('gulp-html-bem-validator'),
 	plumber = require('gulp-plumber');
 
 module.exports = function pug2html() {
@@ -10,6 +11,6 @@ module.exports = function pug2html() {
 		.pipe(pugLinter({ reporter: 'default' }))
 		.pipe(pug({ pretty: true }))
 		.pipe(htmlValidator())
-		.pipe(gulpHtmlBemValidator())
+		.pipe(bemValidator())
 		.pipe(gulp.dest('./build/'))
 };
