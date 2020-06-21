@@ -1,4 +1,4 @@
-const gulp = require('gulp'),
+const { dest, src, watch, series, parallel, task } = require('gulp'),
 	sass = require('gulp-sass'),
 	autoPrefixer = require('gulp-autoprefixer'),
 	cleanCss = require('gulp-clean-css'),
@@ -7,8 +7,8 @@ const gulp = require('gulp'),
 	csso = require('gulp-csso'),
 	stylelint = require('gulp-stylelint');
 
-module.exports = function styles() {
-	return gulp.src('src/styles/*.scss')
+module.exports = task('styles', () => {
+	return src('src/styles/*.scss')
 		.pipe(stylelint({
 			reporters: [
 				{
@@ -24,5 +24,5 @@ module.exports = function styles() {
 			.pipe(csso())
 		.pipe(sourcemaps.write())
 		.pipe(shorthand())
-		.pipe(gulp.dest('./build/css'));
-};
+		.pipe(dest('./build/css'));
+});

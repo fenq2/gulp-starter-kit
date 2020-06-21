@@ -4,6 +4,7 @@
   "description": "gulp-starter-kit for developers",
   "main": "index.js",
   "scripts": {
+    "dev": "gulp dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "fenq2",
