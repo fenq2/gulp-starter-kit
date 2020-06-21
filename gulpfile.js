@@ -1,5 +1,13 @@
-const gulp = require('gulp'),
-	pug2html = require('./gulp/tasks/pug2html'),
-	styles = require('./gulp/tasks/styles');
+'use strict';
 
-module.exports.start = gulp.series(pug2html, styles);
+const { dest, src, watch, series, parallel, task } = require('gulp');
+const taskPath = require('./gulp/path/tasks');
+
+module.exports = function() {
+    taskPath.forEach(function(taskPath) {
+        require(taskPath)();
+    });
+    return gulp;
+};
+
+module.exports.start = series('pug2html');	
