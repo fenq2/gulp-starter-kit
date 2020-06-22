@@ -12,7 +12,9 @@ body {
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
 ul[class],
 ol[class] {
@@ -33,9 +35,13 @@ figure,
 figcaption,
 blockquote,
 dl,
-dd { margin: 0; }
+dd {
+  margin: 0;
+}
 
-a:not([class]) { text-decoration-skip-ink: auto; }
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
 
 img {
   max-width: 100%;
@@ -45,7 +51,9 @@ img {
 input,
 button,
 textarea,
-select { font: inherit; }
+select {
+  font: inherit;
+}
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
@@ -57,7 +65,9 @@ select { font: inherit; }
   }
 }
 
-textarea { resize: none; }
+textarea {
+  resize: none;
+}
 
 .wrapper {
   position: relative;
@@ -65,7 +75,9 @@ textarea { resize: none; }
   flex-direction: column;
 }
 
-.content { flex: 1 0 auto; }
+.content {
+  flex: 1 0 auto;
+}
 
 .container {
   margin: 0 auto;
