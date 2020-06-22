@@ -4,7 +4,6 @@ const { dest, src, watch, series, parallel, task } = require('gulp'),
 	cleanCss = require('gulp-clean-css'),
 	sourcemaps = require('gulp-sourcemaps'),
 	shorthand = require('gulp-shorthand'),      // сокращение стилей
-	cssnano = require('gulp-cssnano'),
 	stylelint = require('gulp-stylelint'),
 	plumber = require('gulp-plumber'),
 	notify = require('gulp-notify'),      // уведомления об ошибках
@@ -56,10 +55,10 @@ module.exports = task('_styles', () => {
 		.pipe(sass())
 		.pipe(autoPrefixer(['last 15 versions', '> 1%'], {cascade: false}))    // настройка автоматической подстановки вендорных префиксов
 		.pipe(cleanCss())
-		.pipe(cssnano())
 		.pipe(shorthand())
 		.pipe(rename({
 			suffix: '.min'
 		}))
+		.pipe(cleanCss())
 		.pipe(dest('./build/css'));
 });

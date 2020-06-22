@@ -5,6 +5,6 @@ const { dest, src, watch, series, parallel, task } = require('gulp'),
 module.exports = task('copyModules', (cb) => {
 	del('./src/libs').then(() => {
 		src(copyDist(), { base: './node_modules/' })
-		  .pipe(dest('./src/libs')).on('end', cb)
+		  .pipe(dest('./build/libs')).on('end', cb)
 	}).catch(cb)
 });
