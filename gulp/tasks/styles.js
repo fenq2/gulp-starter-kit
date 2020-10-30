@@ -19,14 +19,14 @@ module.exports = task('styles', () => {
 			  })(err);
 			}
 		  }))
-		.pipe(stylelint({
-			reporters: [
-				{
-					formatter: 'string', 
-					console: true
-				}
-			]
-		}))
+// 		.pipe(stylelint({
+// 			reporters: [
+// 				{
+// 					formatter: 'string', 
+// 					console: true
+// 				}
+// 			]
+// 		}))
 		.pipe(sass())
 		.on('error', notify.onError({
 			title: 'SASS',
@@ -44,14 +44,14 @@ module.exports = task('styles', () => {
 // Таск для продакшена
 module.exports = task('_styles', () => {
 	return src('src/styles/*.scss')
-		.pipe(stylelint({
-			reporters: [
-				{
-					formatter: 'string', 
-					console: true
-				}
-			]
-		}))
+// 		.pipe(stylelint({
+// 			reporters: [
+// 				{
+// 					formatter: 'string', 
+// 					console: true
+// 				}
+// 			]
+// 		}))
 		.pipe(sass())
 		.pipe(autoPrefixer(['last 15 versions', '> 1%'], {cascade: false}))    // настройка автоматической подстановки вендорных префиксов
 		.pipe(cleanCss())
