@@ -1,3 +1,6 @@
-"use strict";
+window.onload = () => {
 
-[1, 2, 3].map((i) => { return i ** 2; });
+  @@include('../blocks/components/components.js');
+  @@include('../blocks/modules/modules.js');
+
+}
