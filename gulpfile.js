@@ -23,7 +23,7 @@ const build = series(
     parallel(
         '_scripts',
         '_pug2html',
-        '_libs',
+        'libs',
         '_images',
         'sprites',
         'fonts'
